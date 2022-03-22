@@ -1,0 +1,116 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://plugins/flood/client/scenes/sign_in/sign_in.gd" type="Script" id=1]
+
+[node name="sign_in" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c1" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c1" type="Panel" parent="c1"]
+margin_left = 392.0
+margin_top = 250.0
+margin_right = 632.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 240, 100 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="c1" type="MarginContainer" parent="c1/c1"]
+anchor_right = 1.0084
+anchor_bottom = 0.917431
+margin_right = -1.52588e-05
+rect_min_size = Vector2( 240, 100 )
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="c1" type="VBoxContainer" parent="c1/c1/c1"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 232.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 220, 80 )
+size_flags_vertical = 0
+custom_constants/separation = 10
+
+[node name="r1" type="VBoxContainer" parent="c1/c1/c1/c1"]
+margin_right = 222.0
+margin_bottom = 48.0
+
+[node name="r1" type="HBoxContainer" parent="c1/c1/c1/c1/r1"]
+margin_right = 222.0
+margin_bottom = 24.0
+
+[node name="c1" type="Label" parent="c1/c1/c1/c1/r1/r1"]
+margin_top = 5.0
+margin_right = 42.0
+margin_bottom = 19.0
+text = "Name:"
+
+[node name="c2" type="HBoxContainer" parent="c1/c1/c1/c1/r1/r1"]
+margin_left = 46.0
+margin_right = 222.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="name" type="LineEdit" parent="c1/c1/c1/c1/r1/r1/c2"]
+margin_left = 26.0
+margin_right = 176.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="r2" type="HBoxContainer" parent="c1/c1/c1/c1/r1"]
+margin_top = 28.0
+margin_right = 222.0
+margin_bottom = 48.0
+
+[node name="c1" type="Label" parent="c1/c1/c1/c1/r1/r2"]
+margin_top = 3.0
+margin_right = 37.0
+margin_bottom = 17.0
+text = "Color:"
+
+[node name="c2" type="HBoxContainer" parent="c1/c1/c1/c1/r1/r2"]
+margin_left = 41.0
+margin_right = 222.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="color" type="ColorPickerButton" parent="c1/c1/c1/c1/r1/r2/c2"]
+margin_left = 121.0
+margin_right = 181.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 0 )
+
+[node name="r2" type="HBoxContainer" parent="c1/c1/c1/c1"]
+margin_top = 58.0
+margin_right = 222.0
+margin_bottom = 78.0
+alignment = 2
+
+[node name="sign_in" type="Button" parent="c1/c1/c1/c1/r2"]
+margin_left = 122.0
+margin_right = 222.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 0 )
+text = "Sign In"
+
+[connection signal="pressed" from="c1/c1/c1/c1/r2/sign_in" to="." method="_on_sign_in_pressed"]
