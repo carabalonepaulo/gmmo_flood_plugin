@@ -64,14 +64,13 @@ func create_entity() -> Entity:
     entity.size = randi() % 80 + 20
     entity.color = Color(randi())
     entity.step_size = randi() % 100 + 1
-    entity.steps = randi() % 10
+    entity.steps = randi() % 100
     entity.interval = randf()
     return entity
 
 func spawn() -> void:
     var entity = yield(dispatcher.run(self, "create_entity"), "completed")
     emit_signal("entity_born", entity)
-    yield(tree.create_timer(1), "timeout")
 
     while entity.steps > 0:
         entity.position += Vector2(randf(), randf()) * entity.step_size

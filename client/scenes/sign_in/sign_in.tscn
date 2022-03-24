@@ -19,19 +19,18 @@ __meta__ = {
 
 [node name="c1" type="Panel" parent="c1"]
 margin_left = 392.0
-margin_top = 250.0
+margin_top = 263.0
 margin_right = 632.0
-margin_bottom = 350.0
-rect_min_size = Vector2( 240, 100 )
+margin_bottom = 337.0
+rect_min_size = Vector2( 240, 74 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="c1" type="MarginContainer" parent="c1/c1"]
-anchor_right = 1.0084
-anchor_bottom = 0.917431
-margin_right = -1.52588e-05
-rect_min_size = Vector2( 240, 100 )
+anchor_right = 1.0
+anchor_bottom = 0.74
+rect_min_size = Vector2( 240, 74 )
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -43,18 +42,18 @@ __meta__ = {
 [node name="c1" type="VBoxContainer" parent="c1/c1/c1"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 232.0
-margin_bottom = 90.0
-rect_min_size = Vector2( 220, 80 )
-size_flags_vertical = 0
+margin_right = 230.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 220, 54 )
+size_flags_vertical = 4
 custom_constants/separation = 10
 
 [node name="r1" type="VBoxContainer" parent="c1/c1/c1/c1"]
-margin_right = 222.0
-margin_bottom = 48.0
+margin_right = 220.0
+margin_bottom = 24.0
 
 [node name="r1" type="HBoxContainer" parent="c1/c1/c1/c1/r1"]
-margin_right = 222.0
+margin_right = 220.0
 margin_bottom = 24.0
 
 [node name="c1" type="Label" parent="c1/c1/c1/c1/r1/r1"]
@@ -65,50 +64,27 @@ text = "Name:"
 
 [node name="c2" type="HBoxContainer" parent="c1/c1/c1/c1/r1/r1"]
 margin_left = 46.0
-margin_right = 222.0
+margin_right = 220.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 alignment = 2
 
 [node name="name" type="LineEdit" parent="c1/c1/c1/c1/r1/r1/c2"]
-margin_left = 26.0
-margin_right = 176.0
+margin_left = 24.0
+margin_right = 174.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 150, 0 )
-
-[node name="r2" type="HBoxContainer" parent="c1/c1/c1/c1/r1"]
-margin_top = 28.0
-margin_right = 222.0
-margin_bottom = 48.0
-
-[node name="c1" type="Label" parent="c1/c1/c1/c1/r1/r2"]
-margin_top = 3.0
-margin_right = 37.0
-margin_bottom = 17.0
-text = "Color:"
-
-[node name="c2" type="HBoxContainer" parent="c1/c1/c1/c1/r1/r2"]
-margin_left = 41.0
-margin_right = 222.0
-margin_bottom = 20.0
-size_flags_horizontal = 3
-alignment = 2
-
-[node name="color" type="ColorPickerButton" parent="c1/c1/c1/c1/r1/r2/c2"]
-margin_left = 121.0
-margin_right = 181.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 60, 0 )
+focus_next = NodePath("../../../../r2/sign_in")
 
 [node name="r2" type="HBoxContainer" parent="c1/c1/c1/c1"]
-margin_top = 58.0
-margin_right = 222.0
-margin_bottom = 78.0
+margin_top = 34.0
+margin_right = 220.0
+margin_bottom = 54.0
 alignment = 2
 
 [node name="sign_in" type="Button" parent="c1/c1/c1/c1/r2"]
-margin_left = 122.0
-margin_right = 222.0
+margin_left = 120.0
+margin_right = 220.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 100, 0 )
 text = "Sign In"

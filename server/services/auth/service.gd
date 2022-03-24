@@ -1,7 +1,7 @@
 extends Service
 
 
-signal signed_in(cid, name, color)
+signal signed_in(cid, name)
 signal signed_out(cid, name)
 
 
@@ -34,15 +34,15 @@ func is_signed_in(cid: int) -> bool:
 func is_online_now(name: String) -> bool:
     return _online_now.has(name)
 
-func sign_in(cid: int, name: String, color: Color) -> void:
-    _clients[cid] = { name = name, color = color }
+func sign_in(cid: int, name: String) -> void:
+    _clients[cid] = name
     _online_now.push_back(name)
-    emit_signal("signed_in", cid, name, color)
+    emit_signal("signed_in", cid, name)
     logger.write_line("debug", "User %s signed in." % name)
 
 func sign_out(cid: int) -> void:
-    var user = _clients[cid]
-    emit_signal("signed_out", cid, user.name)
-    logger.write_line("debug", "User %s signed in." % user.name)
+    var name = _clients[cid]
+    emit_signal("signed_out", cid, name)
+    logger.write_line("debug", "User %s signed in." % name)
     _clients.erase(cid)
-    _online_now.erase(user.name)
+    _online_now.erase(name)

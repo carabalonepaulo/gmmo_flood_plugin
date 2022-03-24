@@ -14,7 +14,7 @@ onready var _fps: Label = $ui/fps
 onready var _count: Label = $ui/entities
 onready var _container: Node = $entities2
 
-# var _entity: Node2D
+
 var _entities := {}
 var _entities_count = 0
 
@@ -30,20 +30,19 @@ func _on_entity_born(id: int, position: Vector2, size: float, color: Color, inte
     entity.size = size
     entity.color = color
     entity.interval = interval
+
     _entities[id] = entity
     _container.add_child(entity)
     _entities_count += 1
     _count.text = "Entities: " + str(_entities_count)
 
 func _on_entity_moved(id: int, position: Vector2) -> void:
-#    if not _entities.has(id): return
     var entity = _entities[id]
     _tween.interpolate_property(entity, "position", entity.position, position\
         , 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
     _tween.start()
 
 func _on_entity_died(id: int) -> void:
-#    if not _entities.has(id): return
     var entity: Node2D = _entities[id]
     entity.queue_free()
     _entities.erase(id)
