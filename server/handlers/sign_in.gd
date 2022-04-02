@@ -11,10 +11,10 @@ var auth: AuthService
 
 func _init(): header = 2000
 
-func can_process() -> bool:
+func can_process(sender_id: int) -> bool:
     return not auth.is_signed_in(sender_id)
 
-func process(request: SignInRequest) -> void:
+func process(sender_id: int, request: SignInRequest) -> void:
     var response := SignInResponse.new()
     response.result = FAILED if auth.is_online_now(request.name) else OK
-    reply(response)
+    send_to(sender_id, response)

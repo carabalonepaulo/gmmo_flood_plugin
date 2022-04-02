@@ -10,8 +10,5 @@ var world: WorldService
 
 func _init(): header = 2030
 
-func can_process() -> bool:
-    return true
-
-func process(request: SpawnEntityRequest) -> void:
+func process(sender_id: int, request: SpawnEntityRequest) -> void:
     world.spawn()
